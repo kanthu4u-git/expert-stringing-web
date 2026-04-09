@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db';
 import { PlusCircle, AlertTriangle } from 'lucide-react';
+import AddReelModal from '../components/AddReelModal';
 import './Inventory.css';
 
 function Inventory() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const inventory = useLiveQuery(() => db.inventory.toArray()) || [];
   
   const handleAddDummyReel = async () => {
@@ -35,7 +37,7 @@ function Inventory() {
       </header>
 
       <div className="glass-panel inventory-toolbar">
-        <button className="btn-primary" onClick={handleAddDummyReel}>
+        <button className="btn-primary" onClick={() => setIsModalOpen(true)}>
           <PlusCircle size={18} /> Add New Reel
         </button>
       </div>
@@ -89,6 +91,11 @@ function Inventory() {
           </table>
         )}
       </div>
+
+      <AddReelModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

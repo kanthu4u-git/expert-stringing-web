@@ -6,7 +6,9 @@
 
 *   **Advanced Business Dashboard**: Get immediately actionable insights with real-time tiles tracking Pending Jobs, Ready Orders, Unpaid Invoices, and Average Stringing Time.
 *   **Smart Job Creation**: Log multiple records spanning Customer name, Racket details, and sport specifications (Mains/Crosses Tension) instantly into the local database. 
-*   **Customer Direct Links**: Seamless global searchable tables logging user history. Deep-integration featuring 1-click WhatsApp messaging.
+*   **Job History & Archiving**: Move paid/finalized requests instantly into an exclusive Archive board featuring granular search filtering and full Job Detail insight overlays.
+*   **Customer Direct Links**: Seamless global searchable tables logging user history. Deep-integration featuring 1-click WhatsApp messaging and full CRUD (Create, Edit, Delete) properties.
+*   **Global Live Tools**: Features a persistent real-time dynamic clock tracking seconds and dates seamlessly integrated directly into the application layout shell. 
 *   **Pro Inventory Tracker**: Monitor remaining meters for each reel in real-time. Smart visual alerts trigger deep-red badges when strings drop below 1-racket requirement thresholds (< 12 meters).
 *   **Instant PDF Invoices**: Generate completely customized A4 PDF receipts highlighting strings, tensions, dynamic pricing logic (`Base + Add-ons`), securely downloading straight to the host machine.
 *   **Interactive Analytics**: Data visualization implemented via `Recharts` providing beautiful break downs of Tennis against Badminton business splits and daily speed tracking.

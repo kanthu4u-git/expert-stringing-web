@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Home, Users, Package, BarChart2, Plus } from 'lucide-react';
+import { Home, Users, Package, BarChart2, Plus, Archive as ArchiveIcon } from 'lucide-react';
 import { useUI } from './context/UIContext';
 import NewJobModal from './components/NewJobModal';
 import Dashboard from './pages/Dashboard';
 import Customers from './pages/Customers';
 import Inventory from './pages/Inventory';
 import Analytics from './pages/Analytics';
+import Archive from './pages/Archive';
+import DynamicClock from './components/DynamicClock';
 
 function Sidebar() {
   const location = useLocation();
@@ -15,6 +17,7 @@ function Sidebar() {
     { name: 'Customers', path: '/customers', icon: <Users size={20} /> },
     { name: 'Inventory', path: '/inventory', icon: <Package size={20} /> },
     { name: 'Analytics', path: '/analytics', icon: <BarChart2 size={20} /> },
+    { name: 'Archive', path: '/archive', icon: <ArchiveIcon size={20} /> },
   ];
 
   return (
@@ -49,12 +52,14 @@ function App() {
     <Router>
       <div className="app-container">
         <Sidebar />
-        <main className="main-content">
+        <main className="main-content" style={{ position: 'relative' }}>
+          <DynamicClock />
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/customers" element={<Customers />} />
             <Route path="/inventory" element={<Inventory />} />
             <Route path="/analytics" element={<Analytics />} />
+            <Route path="/archive" element={<Archive />} />
           </Routes>
         </main>
         <NewJobModal />
