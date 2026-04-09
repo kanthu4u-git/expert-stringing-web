@@ -1,0 +1,60 @@
+.inventory-toolbar {
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.reel-info strong {
+  font-size: 1.05rem;
+}
+
+.badge-specs {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stock-meter {
+  position: relative;
+  height: 24px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.stock-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.2;
+  transition: width 0.3s ease;
+}
+
+.stock-meter span {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+.badge-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
