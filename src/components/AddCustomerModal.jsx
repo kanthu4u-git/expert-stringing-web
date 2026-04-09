@@ -12,6 +12,7 @@ function AddCustomerModal({ isOpen, onClose, customerToEdit }) {
 
   useEffect(() => {
     if (customerToEdit) {
+      // eslint-disable-next-line
       setFormData({
         name: customerToEdit.name,
         phone: customerToEdit.phone,

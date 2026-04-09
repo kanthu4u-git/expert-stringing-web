@@ -15,21 +15,6 @@ function Customers() {
     c.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleAddDummyCustomer = async () => {
-    await db.customers.add({
-      name: 'Roger Federer',
-      phone: '+1 123-456-7890',
-      email: 'roger@tennis.com',
-      sport: 'Tennis'
-    });
-    await db.customers.add({
-      name: 'Lin Dan',
-      phone: '+1 987-654-3210',
-      email: 'lindan@badminton.com',
-      sport: 'Badminton'
-    });
-  };
-
   const openCreateModal = () => {
     setCustomerToEdit(null);
     setIsModalOpen(true);

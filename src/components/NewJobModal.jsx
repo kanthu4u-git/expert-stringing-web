@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useUI } from '../context/UIContext';
 import { db } from '../db';
 import { X, Play, Square, Plus } from 'lucide-react';
@@ -8,6 +8,14 @@ function NewJobModal() {
   const { isJobModalOpen, setJobModalOpen } = useUI();
   const [timerRunning, setTimerRunning] = useState(false);
   const [timerSeconds, setTimerSeconds] = useState(0);
+
+  useEffect(() => {
+    let interval;
+    if (timerRunning) {
+      interval = setInterval(() => setTimerSeconds(s => s + 1), 1000);
+    }
+    return () => clearInterval(interval);
+  }, [timerRunning]);
   
   const [formData, setFormData] = useState({
     customerName: '',

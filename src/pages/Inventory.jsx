@@ -8,26 +8,6 @@ import './Inventory.css';
 function Inventory() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const inventory = useLiveQuery(() => db.inventory.toArray()) || [];
-  
-  const handleAddDummyReel = async () => {
-    await db.inventory.add({
-      brand: 'Luxilon',
-      model: 'ALU Power',
-      gauge: '1.25',
-      color: 'Silver',
-      lengthMeters: 200,
-      costPrice: 220
-    });
-    // Low stock example
-    await db.inventory.add({
-      brand: 'Yonex',
-      model: 'BG80',
-      gauge: '0.68',
-      color: 'Yellow',
-      lengthMeters: 8, // Low stock, since < 10m is insufficient for Badminton
-      costPrice: 150
-    });
-  };
 
   return (
     <div className="page-container animate-fade-in">
